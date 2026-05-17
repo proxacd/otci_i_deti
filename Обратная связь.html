@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отцы и дети — Обратная связь</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Georgia', serif;
+            background-color: #f5f2e9;
+            color: #2c2b26;
+            line-height: 1.5;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .logo {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            font-size: 1.8rem;
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: #2d4a2c;
+            color: white;
+            padding: 18px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .header-flex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+        }
+        .nav-links a:hover {
+            border-bottom-color: #e6c384;
+        }
+        .nav-links a.active {
+            border-bottom-color: #e6c384;
+        }
+
+        .breadcrumb {
+            background: #e2d8c4;
+            padding: 10px 0;
+            font-size: 0.85rem;
+            margin-bottom: 30px;
+        }
+
+        main {
+            flex: 1;
+            padding-bottom: 40px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 28px;
+            padding: 24px;
+            margin-bottom: 28px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 10px 14px;
+            border-radius: 30px;
+            border: 1px solid #ccc;
+            font-family: inherit;
+        }
+        .btn {
+            display: inline-block;
+            background: #2d4a2c;
+            color: white;
+            padding: 8px 24px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        footer {
+            background: #1f331e;
+            color: #ccc;
+            text-align: center;
+            padding: 22px 0;
+            margin-top: 20px;
+            font-size: 0.85rem;
+        }
+        footer a {
+            color: #e6c384;
+            text-decoration: none;
+        }
+
+        @media (max-width: 850px) {
+            .header-flex { flex-direction: column; align-items: stretch; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-flex">
+        <div class="logo">📖 Отцы и дети</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="about.html">О романе</a></li>
+            <li><a href="characters.html">Персонажи</a></li>
+            <li><a href="analysis.html">Анализ</a></li>
+            <li><a href="feedback.html" class="active">Обратная связь</a></li>
+        </ul>
+    </div>
+</header>
+
+<div class="breadcrumb">
+    <div class="container">Главная / Обратная связь</div>
+</div>
+
+<main class="container">
+    <div class="card">
+        <h2>Обратная связь</h2>
+        <form action="mailto:example@mail.ru" method="post" enctype="text/plain">
+            <div class="form-group"><label>Ваше имя</label><input type="text" name="name" required></div>
+            <div class="form-group"><label>Контактный email</label><input type="email" name="email" required></div>
+            <div class="form-group"><label>Тема сообщения</label><select name="topic"><option>Вопрос по содержанию</option><option>Ошибка на сайте</option><option>Предложение</option></select></div>
+            <div class="form-group"><label>Сообщение</label><textarea name="message" rows="4" required></textarea></div>
+            <button type="submit" class="btn">Отправить сообщение</button>
+        </form>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <p>© 2026, студент гр. 1ПИб-02-5оп-25 Ильичев И.Н.</p>
+        <p><a href="map.html">Карта сайта</a></p>
+    </div>
+</footer>
+
+</body>
+</html>

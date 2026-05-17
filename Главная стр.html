@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отцы и дети — Главная</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Georgia', serif;
+            background-color: #f5f2e9;
+            color: #2c2b26;
+            line-height: 1.5;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .logo {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            font-size: 1.8rem;
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        .quote-text {
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            font-style: italic;
+            background: #e8dfce;
+            padding: 6px 14px;
+            border-radius: 30px;
+            display: inline-block;
+        }
+        h1, h2, h3 {
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+        }
+
+        /* КРАСНАЯ СТРОКА */
+        .card p, .char-desc, .topic-block p {
+            text-indent: 1.5em;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: #2d4a2c;
+            color: white;
+            padding: 18px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .header-flex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+        }
+        .nav-links a:hover {
+            border-bottom-color: #e6c384;
+        }
+        .nav-links a.active {
+            border-bottom-color: #e6c384;
+        }
+
+        .breadcrumb {
+            background: #e2d8c4;
+            padding: 10px 0;
+            font-size: 0.85rem;
+            margin-bottom: 30px;
+        }
+
+        main {
+            flex: 1;
+            padding-bottom: 40px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 28px;
+            padding: 24px;
+            margin-bottom: 28px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .slider-simple {
+            background: #242222;
+            border-radius: 32px;
+            padding: 35px 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .btn {
+            display: inline-block;
+            background: #2d4a2c;
+            color: white;
+            padding: 8px 24px;
+            border-radius: 40px;
+            text-decoration: none;
+            margin-top: 16px;
+            font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Таблица */
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .compare-table th {
+            background: #2d4a2c;
+            color: white;
+            padding: 14px;
+            text-align: center;
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+        }
+        .compare-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            vertical-align: top;
+        }
+        .compare-table tr:nth-child(even) {
+            background-color: #f9f5ea;
+        }
+        .compare-table td:first-child {
+            font-weight: bold;
+            background-color: #e8dfce;
+            width: 180px;
+        }
+
+        /* Фрейм */
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 28px;
+            margin-top: 15px;
+        }
+        .iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 28px;
+            border: none;
+        }
+
+        /* Стили персонажей */
+        .characters-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin-top: 20px;
+        }
+        .char-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+        }
+        .char-avatar {
+            font-size: 3rem;
+            background: #efe2cf;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            text-indent: -9999px;
+        }
+        .char-card h3 { color: #2d4a2c; margin-bottom: 6px; }
+        .char-role { font-weight: 600; color: #8b6b42; margin-bottom: 12px; font-size: 0.9rem; }
+        .char-desc { margin: 12px 0; font-size: 0.95rem; }
+        .char-quotes { background: #faf6ea; padding: 12px; border-radius: 20px; font-size: 0.85rem; border-left: 3px solid #e6c384; margin-top: 12px; }
+
+        /* Анализ */
+        .topic-block {
+            background: white;
+            border-radius: 28px;
+            padding: 24px;
+            margin-bottom: 28px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-left: 6px solid #2d4a2c;
+        }
+        .topic-block h3 { color: #2d4a2c; margin-bottom: 12px; font-size: 1.5rem; }
+        .topic-quote { margin-top: 15px; padding-top: 10px; border-top: 1px dashed #ddd; }
+
+        /* Форма */
+        .form-group { margin-bottom: 18px; }
+        input, textarea, select {
+            width: 100%;
+            padding: 10px 14px;
+            border-radius: 30px;
+            border: 1px solid #ccc;
+            font-family: inherit;
+        }
+
+        /* Многоуровневый список (в разделе О романе) */
+        .multilevel-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .multilevel-list li {
+            margin: 8px 0;
+        }
+        .multilevel-list .level-1 {
+            font-weight: bold;
+            color: #2d4a2c;
+            font-size: 1.1rem;
+            margin-top: 12px;
+        }
+        .multilevel-list .level-2 {
+            padding-left: 25px;
+            color: #4a5b3e;
+        }
+        .multilevel-list .level-3 {
+            padding-left: 50px;
+            color: #6b5b3e;
+            font-size: 0.9rem;
+        }
+
+        /* Карта сайта */
+        .map-list { list-style: none; }
+        .map-list li { margin: 12px 0; }
+        .map-list a { color: #2d4a2c; text-decoration: none; font-weight: bold; }
+        .map-list a:hover { text-decoration: underline; }
+
+        details { margin: 10px 0; }
+        summary { font-weight: bold; padding: 8px; background: #f1ebdd; border-radius: 20px; cursor: pointer; }
+
+        /* ПОДВАЛ С ЗЕЛЁНЫМ ФОНОМ */
+        footer {
+            background: #1f331e;
+            color: #ccc;
+            text-align: center;
+            padding: 22px 0;
+            margin-top: 20px;
+            font-size: 0.85rem;
+        }
+        footer a {
+            color: #e6c384;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 850px) {
+            .characters-grid { grid-template-columns: repeat(2, 1fr); }
+            .header-flex { flex-direction: column; align-items: stretch; }
+        }
+        @media (max-width: 550px) {
+            .characters-grid { grid-template-columns: 1fr; }
+            .compare-table, .compare-table tbody, .compare-table tr, .compare-table td {
+                display: block;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-flex">
+        <div class="logo">📖 Отцы и дети</div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Главная</a></li>
+            <li><a href="about.html">О романе</a></li>
+            <li><a href="characters.html">Персонажи</a></li>
+            <li><a href="analysis.html">Анализ</a></li>
+            <li><a href="feedback.html">Обратная связь</a></li>
+        </ul>
+    </div>
+</header>
+
+<div class="breadcrumb">
+    <div class="container">Главная</div>
+</div>
+
+<main class="container">
+    <div style="background-image: url('ii.jpg');" class="slider-simple">
+        <h2>«Отцы и дети» — роман о вечном конфликте</h2>
+        <p style="margin-top: 14px; color: dark green;">"Сила, сила, — подумал он, — всё ещё есть..."</p>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 25px; margin-bottom: 25px;">
+        <div class="card" style="flex:1;">
+            <h3>Краткое содержание</h3>
+            <p align="justify">Евгений Базаров вместе с другом Аркадием приезжает в имение Кирсановых. Нигилист Базаров отрицает искусство, любовь и авторитеты. Конфликт с Павлом Петровичем, знакомство с умной вдовой Одинцовой, трагическое признание в любви, дуэль и нелепая смерть главного героя.</p>
+            <a href="about.html" class="btn">Подробнее →</a>
+        </div>
+        <div class="card" style="flex:1;">
+            <h3>Лучшие цитаты</h3>
+            <p align="justify">«Природа не храм, а мастерская, и человек в ней работник»<br>«Рафаэль гроша медного не стоит»<br>«Умри я, и обо мне не будет помина...»</p>
+            <a href="characters.html" class="btn">К персонажам →</a>
+        </div>
+        <div class="card" style="flex:1;">
+            <h3>Основная идея</h3>
+            <p align="justify">Столкновение поколений «отцов» и «детей», кризис дворянского либерализма и трагедия нигилиста, не выдержавшего испытания любовью и смертью.</p>
+            <a href="analysis.html" class="btn">Анализ тем →</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Аннотация романа</h3>
+        <p align="justify">Роман «Отцы и дети» (1862) — вершина творчества И.С. Тургенева. В центре произведения — образ «нового человека» Евгения Базарова, его нигилистические взгляды и конфликт с аристократическим окружением. Книга стала манифестом эпохи 1860-х годов и вызвала бурную полемику в обществе.</p>
+    </div>
+
+    <!-- Таблица -->
+    <div class="card">
+        <h3> Сравнение Базарова и Павла Петровича Кирсанова</h3>
+        <table class="compare-table">
+            <thead>
+                <tr><th>Критерий</th><th>Евгений Базаров</th><th>Павел Петрович Кирсанов</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Происхождение</td><td>Разночинец, сын лекаря</td><td>Дворянин, аристократ</td></tr>
+                <tr><td>Мировоззрение</td><td>Нигилизм, отрицание авторитетов</td><td>Консерватизм, защита устоев</td></tr>
+                <tr><td>Отношение к искусству</td><td>«Рафаэль гроша медного не стоит»</td><td>Ценит искусство, читает по-английски</td></tr>
+                <tr><td>Отношение к любви</td><td>Отрицает, но влюбляется в Одинцову</td><td>Страдал от неразделённой любви</td></tr>
+                <tr><td>Финал</td><td>Умирает от заражения крови</td><td>Уезжает за границу, остаётся один</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Фрейм (iframe) -->
+    <div class="card">
+        <h3> Статья о романе «Отцы и дети» в Википедии</h3>
+        <p>Подробная информация об истории создания, критике и значении романа:</p>
+        <div class="iframe-container">
+            <iframe src="https://ru.wikipedia.org/wiki/Отцы_и_дети" title="Статья о романе Отцы и дети в Википедии" allowfullscreen></iframe>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <p>© 2026, студент гр. 1ПИб-02-5оп-25 Ильичев И.Н.</p>
+        <p><a href="map.html">Карта сайта</a></p>
+    </div>
+</footer>
+
+</body>
+</html>

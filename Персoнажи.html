@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отцы и дети — Персонажи</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Georgia', serif;
+            background-color: #f5f2e9;
+            color: #2c2b26;
+            line-height: 1.5;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .logo {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            font-size: 1.8rem;
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: #2d4a2c;
+            color: white;
+            padding: 18px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .header-flex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+        }
+        .nav-links a:hover {
+            border-bottom-color: #e6c384;
+        }
+        .nav-links a.active {
+            border-bottom-color: #e6c384;
+        }
+
+        .breadcrumb {
+            background: #e2d8c4;
+            padding: 10px 0;
+            font-size: 0.85rem;
+            margin-bottom: 30px;
+        }
+
+        main {
+            flex: 1;
+            padding-bottom: 40px;
+        }
+
+        .characters-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin-top: 20px;
+        }
+        .char-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+        }
+        .char-avatar {
+            font-size: 3rem;
+            background: #efe2cf;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            text-indent: -9999px;
+        }
+        .char-card h3 { color: #2d4a2c; margin-bottom: 6px; }
+        .char-role { font-weight: 600; color: #8b6b42; margin-bottom: 12px; font-size: 0.9rem; }
+        .char-desc { margin: 12px 0; font-size: 0.95rem; text-indent: 1.5em; }
+        .char-quotes { background: #faf6ea; padding: 12px; border-radius: 20px; font-size: 0.85rem; border-left: 3px solid #e6c384; margin-top: 12px; }
+
+        footer {
+            background: #1f331e;
+            color: #ccc;
+            text-align: center;
+            padding: 22px 0;
+            margin-top: 20px;
+            font-size: 0.85rem;
+        }
+        footer a {
+            color: #e6c384;
+            text-decoration: none;
+        }
+
+        @media (max-width: 850px) {
+            .characters-grid { grid-template-columns: repeat(2, 1fr); }
+            .header-flex { flex-direction: column; align-items: stretch; }
+        }
+        @media (max-width: 550px) {
+            .characters-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-flex">
+        <div class="logo">📖 Отцы и дети</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="about.html">О романе</a></li>
+            <li><a href="characters.html" class="active">Персонажи</a></li>
+            <li><a href="analysis.html">Анализ</a></li>
+            <li><a href="feedback.html">Обратная связь</a></li>
+        </ul>
+    </div>
+</header>
+
+<div class="breadcrumb">
+    <div class="container">Главная / Персонажи</div>
+</div>
+
+<main class="container">
+    <h2>Герои романа</h2>
+    <div class="characters-grid">
+        <div class="char-card">
+            <div style="background-image: url('bazarov.jpg');" class="char-avatar"></div>
+            <h3>Евгений Базаров</h3>
+            <div class="char-role">Нигилист, главный герой</div>
+            <div class="char-desc">Студент-медик, умён, циничен, отрицает искусство, любовь и романтику. Однако встреча с Одинцовой ломает его рациональное мировоззрение. В финале умирает от заражения крови.</div>
+            <div class="char-quotes"><strong>Ключевые цитаты:</strong><br>«Природа не храм, а мастерская, и человек в ней работник» (гл.9)<br>«Рафаэль гроша медного не стоит» (гл.10)<br>«Умри я, и обо мне не будет помина...» (гл.27)</div>
+        </div>
+        <div class="char-card">
+            <div style="background-image: url('kirsanov.jpg');" class="char-avatar"></div>
+            <h3>Аркадий Кирсанов</h3>
+            <div class="char-role">Дворянин, друг Базарова</div>
+            <div class="char-desc">Молодой человек, пытающийся подражать нигилизму, но по натуре добрый, ценит семью, поэзию и природу. В конце романа женится на Кате и возвращается к традиционным ценностям.</div>
+            <div class="char-quotes"><strong>Цитаты:</strong><br>«...вы ломаете, а что построите — неизвестно»<br>«Здесь воздух, здесь родина, здесь мы живём»</div>
+        </div>
+        <div class="char-card">
+            <div style="background-image: url('nkirsanov.jpg');" class="char-avatar"></div>
+            <h3>Павел Петрович Кирсанов</h3>
+            <div class="char-role">Аристократ, оппонент Базарова</div>
+            <div class="char-desc">Принципиальный, гордый, живёт по старым дворянским устоям. Ненавидит нигилизм и Базарова, вызывает его на дуэль. После поражения уезжает за границу.</div>
+            <div class="char-quotes"><strong>Цитаты:</strong><br>«Без принципов существовать могут лишь порочные люди»<br>«Извините, я привык не уступать...»</div>
+        </div>
+        <div class="char-card">
+            <div style="background-image: url('pkirsanov.jpg');" class="char-avatar"></div>
+            <h3>Николай Петрович Кирсанов</h3>
+            <div class="char-role">Помещик, отец Аркадия</div>
+            <div class="char-desc">Добрый, чуткий, любит музыку, поэзию и природу. Старается быть прогрессивным, но остаётся «отцом» в лучшем смысле. Женится на Фенечке.</div>
+            <div class="char-quotes"><strong>Цитаты:</strong><br>«Мне кажется, они дальше от истины, чем мы, но в то же время я чувствую, что мы отстали...»</div>
+        </div>
+        <div class="char-card">
+            <div style="background-image: url('annaod.jpg');" class="char-avatar"></div>
+            <h3>Анна Сергеевна Одинцова</h3>
+            <div class="char-role">Умная и богатая вдова</div>
+            <div class="char-desc">Холодная, независимая женщина, которая боится настоящих чувств. Базаров признаётся ей в любви, но она отвергает его из страха потерять покой.</div>
+            <div class="char-quotes"><strong>Цитаты:</strong><br>«Я слишком старый воробей, меня на мякине не проведёшь»<br>«Спокойствие всё-таки лучше всего на свете»</div>
+        </div>
+        <div class="char-card">
+            <div style="background-image: url('fen.jpg');" class="char-avatar"></div>
+            <h3>Фенечка</h3>
+            <div class="char-role">Возлюбленная Николая Петровича</div>
+            <div class="char-desc">Простая, добрая девушка, мать маленького Мити. Символ домашнего тепла и естественной красоты, противопоставленной холодной аристократической чопорности.</div>
+            <div class="char-quotes"><strong>Цитаты:</strong><br>«Она была такая беленькая, мягкая, стыдливая»</div>
+        </div>
+        <div class="char-card">
+            <div style="background-image: url('sitn.jpg');" class="char-avatar"></div>
+            <h3>Ситников</h3>
+            <div class="char-role">Ложный нигилист</div>
+            <div class="char-desc">Кривляка, желающий казаться современным и передовым. Поверхностен, нелеп, вызывает скорее насмешку, чем уважение.</div>
+            <div class="char-quotes"><strong>Цитаты:</strong><br>«Я ничему не удивляюсь! Это самое здоровое чувство!»</div>
+        </div>
+        <div class="char-card">
+            <div style="background-image: url('kyk.jpg');" class="char-avatar"></div>
+            <h3>Кукшина</h3>
+            <div class="char-role">Псевдо-нигилистка</div>
+            <div class="char-desc">Эмансипированная, нелепая особа, пытающаяся следовать моде на «передовые идеи». Вызывает у автора ироничное отношение.</div>
+            <div class="char-quotes"><strong>Цитаты:</strong><br>«Мы, женщины, должны быть эмансипированы до конца»</div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <p>© 2026, студент гр. 1ПИб-02-5оп-25 Ильичев И.Н.</p>
+        <p><a href="map.html">Карта сайта</a></p>
+    </div>
+</footer>
+
+</body>
+</html>

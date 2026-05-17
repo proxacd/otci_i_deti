@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отцы и дети — О романе</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Georgia', serif;
+            background-color: #f5f2e9;
+            color: #2c2b26;
+            line-height: 1.5;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .logo {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            font-size: 1.8rem;
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        .quote-text {
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            font-style: italic;
+            background: #e8dfce;
+            padding: 6px 14px;
+            border-radius: 30px;
+            display: inline-block;
+        }
+        h1, h2, h3 {
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+        }
+
+        /* КРАСНАЯ СТРОКА */
+        .card p, .char-desc, .topic-block p {
+            text-indent: 1.5em;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: #2d4a2c;
+            color: white;
+            padding: 18px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .header-flex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+        }
+        .nav-links a:hover {
+            border-bottom-color: #e6c384;
+        }
+        .nav-links a.active {
+            border-bottom-color: #e6c384;
+        }
+
+        .breadcrumb {
+            background: #e2d8c4;
+            padding: 10px 0;
+            font-size: 0.85rem;
+            margin-bottom: 30px;
+        }
+
+        main {
+            flex: 1;
+            padding-bottom: 40px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 28px;
+            padding: 24px;
+            margin-bottom: 28px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .btn {
+            display: inline-block;
+            background: #2d4a2c;
+            color: white;
+            padding: 8px 24px;
+            border-radius: 40px;
+            text-decoration: none;
+            margin-top: 16px;
+            font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Многоуровневый список */
+        .multilevel-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .multilevel-list li {
+            margin: 8px 0;
+        }
+        .multilevel-list .level-1 {
+            font-weight: bold;
+            color: #2d4a2c;
+            font-size: 1.1rem;
+            margin-top: 12px;
+        }
+        .multilevel-list .level-2 {
+            padding-left: 25px;
+            color: #4a5b3e;
+        }
+        .multilevel-list .level-3 {
+            padding-left: 50px;
+            color: #6b5b3e;
+            font-size: 0.9rem;
+        }
+
+        details { margin: 10px 0; }
+        summary { font-weight: bold; padding: 8px; background: #f1ebdd; border-radius: 20px; cursor: pointer; }
+
+        footer {
+            background: #1f331e;
+            color: #ccc;
+            text-align: center;
+            padding: 22px 0;
+            margin-top: 20px;
+            font-size: 0.85rem;
+        }
+        footer a {
+            color: #e6c384;
+            text-decoration: none;
+        }
+
+        @media (max-width: 850px) {
+            .header-flex { flex-direction: column; align-items: stretch; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-flex">
+        <div class="logo">📖 Отцы и дети</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="about.html" class="active">О романе</a></li>
+            <li><a href="characters.html">Персонажи</a></li>
+            <li><a href="analysis.html">Анализ</a></li>
+            <li><a href="feedback.html">Обратная связь</a></li>
+        </ul>
+    </div>
+</header>
+
+<div class="breadcrumb">
+    <div class="container">Главная / О романе</div>
+</div>
+
+<main class="container">
+    <div class="card">
+        <h3> История создания</h3>
+        <p>Замысел романа возник у Тургенева в 1860 году в Англии. Прототипом Базарова послужил молодой провинциальный врач, встреченный писателем в поезде. Роман был опубликован в 1862 году в журнале «Русский вестник» и вызвал ожесточённые споры: либералы обвиняли Тургенева в симпатии к нигилистам, а радикалы — в клевете на молодое поколение.</p>
+    </div>
+
+    
+    <div class="card">
+        <h3> Структура романа</h3>
+        <ul class="multilevel-list">
+            <li class="level-1"> Часть первая</li>
+            <li class="level-2"> Главы 1–4: Приезд в Марьино
+                <ul class="multilevel-list">
+                    <li class="level-3"> Знакомство с Кирсановыми</li>
+                    <li class="level-3"> Первая встреча Базарова и Павла Петровича</li>
+                </ul>
+            </li>
+            <li class="level-2">Главы 5–10: Споры о нигилизме
+                <ul class="multilevel-list">
+                    <li class="level-3"> Отрицание искусства и любви</li>
+                    <li class="level-3"> «Мы ломаем, потому что мы сила»</li>
+                </ul>
+            </li>
+            <li class="level-2">Главы 11–16: Знакомство с Одинцовой
+                <ul class="multilevel-list">
+                    <li class="level-3"> Бал в губернском городе</li>
+                    <li class="level-3"> Поездка в Никольское</li>
+                </ul>
+            </li>
+            <li class="level-1" style="margin-top: 15px;"> Часть вторая</li>
+            <li class="level-2">Главы 17–24: Объяснение и дуэль
+                <ul class="multilevel-list">
+                    <li class="level-3">Признание Базарова в любви</li>
+                    <li class="level-3">Дуэль с Павлом Петровичем</li>
+                </ul>
+            </li>
+            <li class="level-2">Главы 25–28: Смерть Базарова
+                <ul class="multilevel-list">
+                    <li class="level-3"> Заражение тифом</li>
+                    <li class="level-3"> Прощание с родителями и Одинцовой</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h3> Краткий пересказ по главам</h3>
+        <details><summary>Главы 1–4: Приезд в Марьино</summary><p>Аркадий Кирсанов возвращается домой вместе с другом Евгением Базаровым. Знакомство с отцом и дядей. Базаров сразу производит неоднозначное впечатление на Павла Петровича.</p></details>
+        <details><summary>Главы 5–10: Споры о нигилизме</summary><p>Базаров отрицает искусство, любовь, аристократию. «Мы ломаем, потому что мы сила». Конфликт между «отцами» и «детьми» достигает пика.</p></details>
+        <details><summary>Главы 11–16: Знакомство с Одинцовой</summary><p>В губернском городе герои посещают бал и знакомятся с Анной Сергеевной Одинцовой — умной, красивой вдовой. Базаров неожиданно для себя проявляет интерес.</p></details>
+        <details><summary>Главы 17–24: Объяснение и дуэль</summary><p>В Никольском Базаров признаётся Одинцовой в любви, но получает отказ. Возвращение в Марьино, ссора с Павлом Петровичем и дуэль, в которой Базаров ранит противника.</p></details>
+        <details><summary>Главы 25–28: Смерть Базарова</summary><p>Базаров уезжает к родителям. Во время вскрытия тифозного больного он заражается и умирает. В эпилоге Аркадий женится на Кате, а Николай Петрович — на Фенечке.</p></details>
+    </div>
+
+    <div class="card">
+        <h3> Основная идея романа</h3>
+        <p>Тургенев показал неизбежность смены поколений и одновременно трагедию крайнего нигилизма. Базаров, отрицающий всё духовное, оказывается неспособным справиться с собственной человеческой природой — любовью. Смерть героя символизирует ограниченность одних только материалистических взглядов.</p>
+    </div>
+
+    <div class="card">
+        <h3> Хронологическая лента событий</h3>
+        <p>1859 год (приезд Базарова) → споры с Павлом Петровичем → бал в городе → знакомство с Одинцовой → объяснение в любви → дуэль → болезнь и смерть Базарова → эпилог (1860 год)</p>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <p>© 2026, студент гр. 1ПИб-02-5оп-25 Ильичев И.Н.</p>
+        <p><a href="map.html">Карта сайта</a></p>
+    </div>
+</footer>
+
+</body>
+</html>
